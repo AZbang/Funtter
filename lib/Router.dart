@@ -32,11 +32,14 @@ class _RouterState extends State<Router> {
         .toList();
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Funtter: First Flutter App'),
+      ),
       body: widget.views.elementAt(selectedView),
       bottomNavigationBar: BottomNavigationBar(
         items: menu,
         currentIndex: selectedView,
-        selectedItemColor: Colors.blueGrey,
+        selectedItemColor: Colors.grey,
         onTap: onItemTapped,
       ),
     );

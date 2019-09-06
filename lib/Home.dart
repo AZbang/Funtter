@@ -19,7 +19,7 @@ class Home extends RouteView {
               slivers: <Widget>[
                 SliverPadding(
                   padding: const EdgeInsets.symmetric(
-                      vertical: 50.0, horizontal: 10.0),
+                      vertical: 10.0, horizontal: 10.0),
                   sliver: SliverGrid.count(
                     crossAxisSpacing: 10.0,
                     mainAxisSpacing: 10.0,

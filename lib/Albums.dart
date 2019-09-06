@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'dart:math';
 
 Future<Album> fetchAlbums() async {
   final response = await http.get('https://picsum.photos/v2/list');
@@ -24,9 +25,11 @@ class Album {
   Album(this.images);
 
   factory Album.fromJson(List<dynamic> json) {
+    final rnd = new Random();
+
     return Album(json
-        .map((image) => ImageModel(
-            image['id'], image['author'], 'https://picsum.photos/400'))
+        .map((image) => ImageModel(image['id'], image['author'],
+            'https://picsum.photos/id/${rnd.nextInt(100)}/400'))
         .toList());
   }
 }
