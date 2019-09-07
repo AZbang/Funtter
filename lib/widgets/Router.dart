@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'Home.dart';
-import 'Saved.dart';
+import '../views/Home.dart';
+import '../views/Saved.dart';
 
 abstract class RouteView extends StatelessWidget {
   String name;
@@ -31,11 +31,12 @@ class _RouterState extends State<Router> {
             ))
         .toList();
 
+    var view = widget.views.elementAt(selectedView);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Funtter: First Flutter App'),
+        title: Text(view.name),
       ),
-      body: widget.views.elementAt(selectedView),
+      body: view,
       bottomNavigationBar: BottomNavigationBar(
         items: menu,
         currentIndex: selectedView,
